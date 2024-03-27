@@ -1,4 +1,6 @@
-import type { MetaFunction } from "@remix-run/node";
+import globalStyle from "~/style/global.css?url"
+
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
 
 import {
   Links,
@@ -14,6 +16,10 @@ export const meta: MetaFunction = () => {
   ]
 }
 
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: "https://unpkg.com/modern-css-reset@1.4.0/dist/reset.min.css" }, 
+  { rel: "stylesheet", href: globalStyle },
+]
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
