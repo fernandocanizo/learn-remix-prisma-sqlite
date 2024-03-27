@@ -1,3 +1,5 @@
+import type { MetaFunction } from "@remix-run/node";
+
 import {
   Links,
   Meta,
@@ -5,6 +7,13 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Prisma + SQLite Demo" },
+  ]
+}
+
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
