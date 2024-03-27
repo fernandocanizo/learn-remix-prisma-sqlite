@@ -10,10 +10,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Team {
-  id String @id @default(uuid())
-  team String
-  country String
+model Branding {
+  id String @id @default("en_US")
+  logotype String
+  servicePoint String
+  servicePointID String
+  servicePointReferenceFormat String
+  account String
+  meterID String
+  meterReferenceFormat String
+  client String
+  clientID String
+  clientReferenceFormat String
+  deviceReferenceFormat String
+  defaultLatitude String
+  defaultLongitude String
+  defaultAddress String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
